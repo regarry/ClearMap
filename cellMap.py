@@ -12,10 +12,10 @@ from ClearMap.Environment import *
 #%% directories and files
 
 # stitched = 'name of stitched dataset' like a multi-page tif, e.g.
-stitched = 'P30MEMXcreMADMEGFR++L.tif'
+stitched = 'registration.tif'
 
 # directory = '/path/to/stitched/' e.g.
-directory = 'path/to/P30MEMXcreMADMEGFR++L/'
+directory = '/rsstu/users/t/tghashg/MADMbrains/Ryan/11-07-2024/mahdi_first_p5/numorph/'
 
 ws = wsp.Workspace('CellMap', directory=directory);
 ws.update(stitched=stitched)
