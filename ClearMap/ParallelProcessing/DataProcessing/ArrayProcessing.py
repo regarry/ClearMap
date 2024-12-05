@@ -30,7 +30,7 @@ import ClearMap.Utils.Timer as tmr
 
 import pyximport;
 
-_old_get_distutils_extension = pyximport.pyximport.get_distutils_extension
+_old_get_distutils_extension = pyximport.get_distutils_extension
 
 def _new_get_distutils_extension(modname, pyxfilename, language_level=None):
     extension_mod, setup_args = _old_get_distutils_extension(modname, pyxfilename, language_level)
