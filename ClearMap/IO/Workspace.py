@@ -81,6 +81,7 @@ default_file_type_to_name_cell_map.update(
     autofluorescence          = "Autofluorescence/Z<Z,4>.tif",
     cells                     = 'cells.npy',
     density                   = "density.tif",
+    cell_registration          = "cell_registration.npy"
     )
 
 file_type_synonyms.update(c="cells")

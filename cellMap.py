@@ -4,6 +4,7 @@
 Script - volume registration and cell mapping using ClearMap2
 
 """
+#  nohup python cellMap.py &> ./logs/02-03-25-16-16.txt &
 
 #%% load ClearMap modules
 
@@ -15,7 +16,8 @@ from ClearMap.Environment import *
 stitched = 'registration.tif'
 
 # directory = '/path/to/stitched/' e.g.
-directory = '/rsstu/users/t/tghashg/MADMbrains/Ryan/11-07-2024/mahdi_first_p5/numorph/'
+#directory = '/rsstu/users/t/tghashg/MADMbrains/Ryan/11-07-2024/mahdi_first_p5/numorph/'
+directory = '/home/greenbaum-gpu/Ryan/ClearMap/data/12-16-2024_OC3_T7_TAIL'
 
 ws = wsp.Workspace('CellMap', directory=directory);
 ws.update(stitched=stitched)
@@ -69,13 +71,14 @@ elx.align(**align_reference_parameter);
 import csv
 import os
 
-RES = np.array([0.65,0.65,10]) # original voxel size of dataset
+RES = np.array([0.65,0.65,20]) # original voxel size of dataset
 ratio = np.array([16,16,2]) # source_resolution / RES
 num_class = 7 # number of classes
 
 #%% multi-class annotation
 
 #% Cell alignment
+print('Starting cell alignment...')
 
 def transformation(coordinates):
   
